@@ -49,6 +49,8 @@ namespace LemonadeStand
 
             TakePlayerToStore(playerOne);
 
+            TakePlayerToRecipeBuilder(playerOne);
+
 
            // Directory(playerOne);
 
@@ -64,6 +66,7 @@ namespace LemonadeStand
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Welcome to Lemonade Stand! Press ENTER to begin!");
+            Console.ResetColor();
             Console.ReadLine();
             Console.Clear();
         }
@@ -72,8 +75,13 @@ namespace LemonadeStand
         public void TakePlayerToStore(Player player)
         {
             Store store = new Store(player);
-            store.GoToStoreMenue();
+            store.GoToStoreMenu();
 
+        }
+
+        public void TakePlayerToRecipeBuilder(Player player)
+        {
+            player.recipe.ChangeRecipe();
         }
  
 
