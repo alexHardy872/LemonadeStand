@@ -24,7 +24,7 @@ namespace LemonadeStand
 
         public Game()
         {
-            currentDayNum = 1;
+            currentDayNum = 0;
             days = new List<Day> {};
             seasonLength = 7;
         }
@@ -38,13 +38,16 @@ namespace LemonadeStand
             CreateAllDays();
            
            
-            
-      
+   
             CreatePlayer();
+
+            DisplayCurrentDay();
 
             playerOne.DisplayInventory();
 
             // go to store
+
+            TakePlayerToStore(playerOne);
 
 
            // Directory(playerOne);
@@ -65,6 +68,13 @@ namespace LemonadeStand
             Console.Clear();
         }
 
+
+        public void TakePlayerToStore(Player player)
+        {
+            Store store = new Store(player);
+            store.GoToStoreMenue();
+
+        }
  
 
 
@@ -72,11 +82,9 @@ namespace LemonadeStand
         public void NewDay(int dayNum)
         {
             Day day = new Day(dayNum);
-            Console.WriteLine("Day " + dayNum);
-            Console.ReadLine();
 
             day.GetWeather(); // new weather
-            //day.CreateCustomers(); // new customers
+            day.CreateCustomers(); // new customers
             days.Add(day);
         }
 
@@ -89,6 +97,16 @@ namespace LemonadeStand
             }
 
         }
+
+        public void DisplayCurrentDay()
+        {
+            Day currentDay = days[currentDayNum];
+            Console.WriteLine("Forcasted weather is " + currentDay.weather.PredictForcast() + " and " + currentDay.weather.PredictTemp());
+            //Console.WriteLine("Actual weather is " + currentDay.weather.currentWeather + " and " + currentDay.weather.temperature);
+            Console.WriteLine(currentDay.customers.Count + " potential customers");
+            Console.ReadLine();
+        }
+        
      
 
         public void CreatePlayer()
@@ -103,7 +121,6 @@ namespace LemonadeStand
             Console.WriteLine("Would you like to go to the 'store' alter the 'recipe' or 'start' Day " + currentDay + "?");
             string goTo = Console.ReadLine();
            
-
             switch (goTo)
             {
                 case "store":

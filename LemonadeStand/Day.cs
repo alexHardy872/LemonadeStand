@@ -19,6 +19,8 @@ namespace LemonadeStand
         public Day(int day)
         {
             dayNum = day;
+            crowd = GetRandomNum(60, 120);
+            customers = new List<Customer> { };
 
 
         }
@@ -27,9 +29,7 @@ namespace LemonadeStand
         { 
              weather = new Weather();
 
-            Console.WriteLine("Forcasted weather is " + weather.PredictForcast() + " and " + weather.PredictTemp());
-            Console.WriteLine("Actual weather is " + weather.currentWeather + " and " + weather.temperature);
-            Console.ReadLine();
+         
 
         }
 
@@ -57,6 +57,8 @@ namespace LemonadeStand
                 GetCustomers(i);
 
             }
+
+     
         }
 
         public int GetRandomNum(int min, int max)

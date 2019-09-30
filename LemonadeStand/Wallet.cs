@@ -22,5 +22,18 @@ namespace LemonadeStand
         // catch when empty
 
 
+        public bool CheckWallet(double price)
+        {
+            if (price > money)
+            {
+                return false;
+            }
+            else
+            {
+                money -= price;
+                return true;
+            }
+        }
+
     }
 }
