@@ -8,10 +8,9 @@ namespace LemonadeStand
 {
     class Weather
     {
-        public string condition;
+        
         public int temperature;
         private List<string> weatherConditions;
-        public string predictedForecast;
         public Random rand;
         public string currentWeather;
 
@@ -34,15 +33,15 @@ namespace LemonadeStand
             int index = weatherConditions.IndexOf(currentWeather);
 
             int accuracy = RandomNumber(0, 2); // determine to be correct or not
-            int error = RandomNumber(0, 1); // determine to add or substract
+            int error = RandomNumber(0, 1); // determine to add or substract 0 add 1 substract
 
             if (index == 0)
             {
-                error = 1;
+                error = 0;
             }
             else if (index == weatherConditions.Count -1)
             {
-                error = 0;
+                error = 1;
             }
 
             if (accuracy > 0)

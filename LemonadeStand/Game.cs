@@ -15,15 +15,18 @@ namespace LemonadeStand
 
         public Player playerOne;
         public List<Day> days;
-        public int currentDay;
-        public string GameStyle;
+        public Day currentDay;
+        public int currentDayNum;
+        //public string GameStyle;
+        int seasonLength;
         
 
 
         public Game()
         {
-            currentDay = 1;
+            currentDayNum = 1;
             days = new List<Day> {};
+            seasonLength = 7;
         }
 
 
@@ -32,17 +35,19 @@ namespace LemonadeStand
         public void StartGame()
         {
             Welcome();
-            //GameStyleSelector();
-            NewDay();
-            // display forecast ect ect
-            GetWeather();
+            CreateAllDays();
+           
+           
+            
+      
             CreatePlayer();
 
             playerOne.DisplayInventory();
 
-            
+            // go to store
 
-            Directory(playerOne);
+
+           // Directory(playerOne);
 
             // go to store to buy more
 
@@ -64,27 +69,27 @@ namespace LemonadeStand
 
 
 
-        public void NewDay()
+        public void NewDay(int dayNum)
         {
-            Day day = new Day(currentDay);
-            Console.WriteLine("Day " + currentDay);
+            Day day = new Day(dayNum);
+            Console.WriteLine("Day " + dayNum);
             Console.ReadLine();
-            // new day
-            // new wheather
-            // show wheather forecast
 
+            day.GetWeather(); // new weather
+            //day.CreateCustomers(); // new customers
             days.Add(day);
         }
 
-        public void GetWeather()
+        public void CreateAllDays()
         {
-            Weather forcast = new Weather();
-            
-            Console.WriteLine("Forcasted weather is "+forcast.PredictForcast()+" and "+forcast.PredictTemp());
-            Console.WriteLine("Actual weather is " + forcast.currentWeather + " and " + forcast.temperature);
-            Console.ReadLine();
+            for ( int i = 1; i <= seasonLength; i++)
+            {
+                NewDay(i);
+               
+            }
 
         }
+     
 
         public void CreatePlayer()
         {
