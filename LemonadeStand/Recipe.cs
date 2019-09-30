@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Recipe
+    public class Recipe
     {
+        public int amountOfLemones;
+        public int amountOfSugarCubes;
+        public int amountOfIceCubes;
+        public double pricePerCup;
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

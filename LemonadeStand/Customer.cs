@@ -8,5 +8,13 @@ namespace LemonadeStand
 {
     class Customer
     {
+
+        private List<string> names;
+        public string name;
+
+
+        // buy lemonade
+
+        //likelyhood determined by weather, price, and random individuals
     }
 }

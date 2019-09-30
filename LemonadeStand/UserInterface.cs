@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    public static class UserInterface
     {
-        Player player;
-
-
-
-
 
 
 

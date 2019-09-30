@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class IceCube
+    public class IceCube : Item
     {
+
+
+
+
+
+
+
+
+
+
+
     }
 }

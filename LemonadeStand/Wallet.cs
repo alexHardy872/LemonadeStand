@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet
+    public class Wallet
     {
+        private double money;
+
+
+
+        public Wallet()
+        {
+            money = 20;
+        }
+
+        // update wallet with expenses
+
+        // catch when empty
+
+
     }
 }

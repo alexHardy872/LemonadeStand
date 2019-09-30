@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Item
+    public abstract class Item
     {
+        public string name;
+        public double price;
+
+
+
+
+
+
+        public void BuyItem()
+        {
+
+
+        }
+
+
+
+
+
     }
 }

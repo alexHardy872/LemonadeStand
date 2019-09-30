@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Lemon
+    public class Lemon : Item
     {
+
+
+
+
+
+
+
+
+
+
     }
 }
