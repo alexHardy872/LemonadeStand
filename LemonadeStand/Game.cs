@@ -35,9 +35,20 @@ namespace LemonadeStand
             //GameStyleSelector();
             NewDay();
             // display forecast ect ect
+            GetWeather();
             CreatePlayer();
 
-            playerOne.
+            playerOne.DisplayInventory();
+
+            
+
+            Directory(playerOne);
+
+            // go to store to buy more
+
+            // make recipee
+
+            // back to store options ect 
 
         }
 
@@ -65,10 +76,42 @@ namespace LemonadeStand
             days.Add(day);
         }
 
+        public void GetWeather()
+        {
+            Weather forcast = new Weather();
+            
+            Console.WriteLine("Forcasted weather is "+forcast.PredictForcast()+" and "+forcast.PredictTemp());
+            Console.WriteLine("Actual weather is " + forcast.currentWeather + " and " + forcast.temperature);
+            Console.ReadLine();
+
+        }
+
         public void CreatePlayer()
         {
             playerOne = new Human("Player 1");
 
+        }
+
+        public void Directory(Player player)
+        {
+            Console.WriteLine(player.name + " has $" + player.wallet.money);
+            Console.WriteLine("Would you like to go to the 'store' alter the 'recipe' or 'start' Day " + currentDay + "?");
+            string goTo = Console.ReadLine();
+           
+
+            switch (goTo)
+            {
+                case "store":
+                    player.GoToStore();
+                    break;
+                case "recipe":
+                    player.RecipeMenue();
+                    break;
+                case "start":
+                    player.StartDay();
+                    break;
+
+            }
         }
 
 

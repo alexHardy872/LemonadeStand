@@ -29,10 +29,23 @@ namespace LemonadeStand
 
         public void DisplayInventory()
         {
-            Console.WriteLine(name + " Inventory");
-            Console.WriteLine();
-            Console.WriteLine(name + " Inventory");
-            Console.WriteLine(name + " Inventory");
+            inventory.DisplayInventory();
+
+        }
+
+        public void GoToStore()
+        {
+
+
+        }
+
+        public void RecipeMenue()
+        {
+
+        }
+
+        public void StartDay()
+        {
 
         }
 
